@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel='stylesheet' href='/stylesheets/styles.css' />
+    <style>
+        :root {
+            --userColor: <%- colorFondo %>;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: var(--userColor);">
+
+    <header style="background-image: url(/images/Royale.jpg);">
+        <a href="/">
+            <div class="logo" style="background-image: url(/images/logo.png);"></div>
+        </a>
+    </header>
+    <main>
+        <section class="form">
+            <form action="/" method="post">
+                <label for="nombre">Ingrese su nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <p class="error">
+                    <%= locals.errors && errors.nombre ? errors.nombre.msg : null %>
+                </p>
+
+                <label for="color">Color:</label>
+                <select name="color" id="color" required>
+                    <option value="#E63946" style="background-color:#E63946">#E63946</option>
+                    <option value="#F1FAEE" style="background-color:#F1FAEE">#F1FAEE</option>
+                    <option value="#A8DADC" style="background-color:#A8DADC">#A8DADC</option>
+                    <option value="#457B9D" style="background-color:#457B9D">#457B9D</option>
+                    <option value="#1D3557" style="background-color:#1D3557">#1D3557</option>
+                </select>
+                <p class="error">
+                    <%= locals.errors && errors.color ? errors.color.msg : null %>
+                </p>
+
+                <label for="email">Ingrese su email:</label>
+                <input type="email" name="email" id="email" required>
+                <p class="error">
+                    <%= locals.errors && errors.email ? errors.email.msg : null %>
+                </p>
+
+                <label for="edad">Ingrese su edad:</label>
+                <input type="number" name="edad" id="edad">
+                <p class="error">
+                    <%= locals.errors && errors.edad ? errors.edad.msg : null %>
+                </p>
+                <label for="recordarColor">Recordar Color</label>
+                <input type="checkbox" name="recordarColor" id="recordarColor">
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section class="h1">
+            <h1 >
+                <%= texto %>
+            </h1>
+        </section>
+        <section class="section-hello">
+            <a class="button-hello" href="/hello"><span>HELLO</span></a>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel='stylesheet' href='/stylesheets/styles.css' />
+        <style>
+            :root {
+                --userColor: <%- colorFondo %>;
+            }
+        </style>
+    </head>
+<body style="background-color: var(--userColor);">
+    <header style="background-image: url(/images/Royale.jpg);">
+        <a href="/">
+            <div class="logo" style="background-image: url(/images/logo.png);"></div>
+        </a>
+    </header>
+    <h1 class="hello"> <%= nombre %>, gracias por visitarnos! </h1>
+    <form action="/hello?_method=DELETE" method="post">
+        <button type="submit">NOT COLOR</button>
+    </form>
+    
+</body>
+</html>
